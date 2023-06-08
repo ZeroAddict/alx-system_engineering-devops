@@ -1,3 +1,4 @@
+Shell, basics, Bash projects
 00. print current working directory's absolute path name
 01. displays the contents of the directory
 02. script changes working directory to the home directory
