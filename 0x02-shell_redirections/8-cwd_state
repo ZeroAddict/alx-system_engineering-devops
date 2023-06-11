@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ls -la" > \/alx\/\-system/\_engineering\-devops\/0x02\-shell\_redirections\/ls\_cwd\_content
+echo "ls -la" > /alx/\-system/\_engineering\-devops/0x02\-shell\_redirections/ls\_cwd\_content
