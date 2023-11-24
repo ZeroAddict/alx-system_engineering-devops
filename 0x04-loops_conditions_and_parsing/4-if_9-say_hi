@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# displays Best School 10 times with Hi.
+
+INDEX=0
+while [ $INDEX -lt 11 ]
+do
+    if [ $INDEX=9 ]
+    then
+        echo "Hi"
+    else
+        echo "Best School"
+    fi
+    let INDEX=INDEX+1
+done

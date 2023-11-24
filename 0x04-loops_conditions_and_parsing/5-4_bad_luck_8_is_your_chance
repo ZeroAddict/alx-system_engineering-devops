@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# displays Best School 10 times with bad/good luck
+
+INDEX=1
+while [ $INDEX -lt 11 ]
+do
+    if [ $INDEX = 4 ]
+    then
+        echo "bad luck"
+    elif [ $INDEX = 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    let INDEX=INDEX+1
+done
