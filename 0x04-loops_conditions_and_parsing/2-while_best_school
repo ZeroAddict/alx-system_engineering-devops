@@ -5,15 +5,5 @@ COUNT=0
 while [ $COUNT -lt 10 ]
 do
     echo "Best School"
-    let COUNT+=1
-done
-
-
-1-for
-#!/usr/bin/env bash
-# displays Best School 10 times with a for loop (())
-
-for (( x=1; x<=10; x++ ))
-do
-    echo "Best School"
+    (( COUNT+=1 ))
 done

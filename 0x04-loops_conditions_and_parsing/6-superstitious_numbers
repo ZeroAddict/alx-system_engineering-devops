@@ -26,5 +26,5 @@ do
 	    ;;
     esac
 
-    let INDEX=INDEX+1
+    (( INDEX=INDEX+1 ))
 done

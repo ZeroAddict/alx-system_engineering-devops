@@ -4,11 +4,11 @@
 INDEX=0
 while [ $INDEX -lt 11 ]
 do
-    if [ $INDEX=9 ]
+    if [ $INDEX = 9 ]
     then
         echo "Hi"
     else
         echo "Best School"
     fi
-    let INDEX=INDEX+1
+    (( INDEX= INDEX+1 ))
 done
