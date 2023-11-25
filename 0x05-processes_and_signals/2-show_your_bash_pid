@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Displays the lines containing "bash" using aux --forest & grep
+
+ps aux --forest | grep bash
