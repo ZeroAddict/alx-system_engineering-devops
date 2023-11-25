@@ -9,6 +9,10 @@
 # If'no other or some other' arg is passed
 #	"Usage: manage_my_process {start|stop|restart}"
 
+#stopp(){
+#sudo kill -15 "$("/var/run/my_process.pid")"
+#}
+
 if [ "${1}" == "start" ]
 	then
 		./manage_my_process &
@@ -17,13 +21,12 @@ if [ "${1}" == "start" ]
 		echo "manage_my_process started"
 elif [ "${1}" == "stop" ]
 	then
-                kill "$(cat ./manage_my_process)"
-                rm /var/run/my_process.pid
-                echo "$!" > /var/run/my_process.pid
+		kill "$(cat ./manage_my_process)"
+		rm /var/run/my_process.pid
                 echo "manage_my_process stopped"
 elif [ "${1}" == "restart" ]
 	then
-                kill "$(cat ./manage_my_process)" 
+                kill "$(cat ./manage_my_process)"
                 rm /var/run/my_process.pid
                 ./manage_my_process &
                 touch /var/run/my_process.pid
