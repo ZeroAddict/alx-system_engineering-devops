@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#runs ToInfinityAndBeyond in 4-to_inf until pkill
+#ToInfinityAndBeyond in 7-highlander run until itz pkill'd
 
-pkill -f 4-to_infinity_and_beyond
+pkill -f 7-highlander
