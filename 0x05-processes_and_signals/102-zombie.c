@@ -24,7 +24,7 @@ int main(void)
 	index = 1;
 	pid_child = fork();
 
-	while(index <= 5)
+	while (index <= 5)
 	{
 		if (pid_child > 0)
 		{
