@@ -24,17 +24,18 @@ int main(void)
 	index = 1;
 	pid_child = fork();
 
-	if (index <= 5)
+	while(index <= 5)
 	{
 		if (pid_child > 0)
 		{
 			printf("Zombie process created, PID: %d\n", getpid());
 			sleep(1);
+			index++;
 		}
-		index++;
-	}
+
 	else
 		exit(0);
+	}
 
 	infinite_while();
 	return (EXIT_SUCCESS);
