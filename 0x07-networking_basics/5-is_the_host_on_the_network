@@ -2,11 +2,11 @@
 #script pings an IP address passed as an argument
 #IPvar variable
 
-IPvar = "${1}"
+IPvar="${1}"
 
 #fileame variable
-fileName = $(basename "${BASH_SOURCE[@]}")
-if ! [$"IPvar"]; then
+fileName=$(basename "${BASH_SOURCE[@]}")
+if [ -z "${IPvar}" ]; then
 	echo "usage: ${fileName} {IP_ADDRESS}"
 else
 	ping -c 5 "${IPvar}"
