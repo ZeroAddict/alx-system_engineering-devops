@@ -4,10 +4,11 @@
 file { 'etc/ssh/ssh_config':
 	ensure => present,
 
-content => ''
+content => '
 
 	#SSH client cconfiguration adjusted and set
 	host*
 	IdentityFile ~/.ssh/school
 	PasswordAuthentication no
+	'
 }
