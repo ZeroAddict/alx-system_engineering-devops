@@ -1,11 +1,26 @@
-#!/usr/bin/env bash                                                           
-# Install and configure HAproxy on your lb-01 server                          
-sudo apt-get update
-sudo apt-get -y install software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-1.8
-sudo apt-get update
-sudo apt-get -y install haproxy=1.8.\*
-options="\n\tbind :80\n\tmode http\n\tuse_backend mybackend\nbackend mybackend\n\tbalance roundrobin\n\tserver 449939-web-01 52.91.116.50:80 check\n\tserver 449939-web-02 54.144.21.201:80 check"
-sed -i '/errorfile 504/a frontend myconf' /etc/haproxy/haproxy.cfg
-sed -i "s/frontend myconf/&$options/g" /etc/haproxy/haproxy.cfg
-sudo service haproxy restart
+#!/usr/bin/env bash
+
+# Set variables
+MY_ID=496
+CONFIG_FILE=/etc/haproxy/haproxy.cfg
+INPUT_LINE="..."
+
+# Check hostname
+if ! [[ $(hostname) =~ ^$MY_ID-lb-[0-9]+ ]]; then
+  echo "Hostname not configured properly..." >&2
+  echo "Please set hostname to pattern: $MY_ID-lb-<server_id>..." >&2
+  exit 1
+fi
+
+# Install and configure HAProxy
+sudo apt update
+sudo apt install -y haproxy
+
+# Create and configure HAProxy configuration file
+sudo tee "$CONFIG_FILE" >/dev/null <<EOF
+$INPUT_LINE
+EOF
+
+# Start and enable HAProxy service
+sudo systemctl start haproxy
+sudo systemctl enable haproxy
